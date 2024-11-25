@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
@@ -185,13 +186,13 @@ const App = () => {
         particlesLoaded={particlesLoaded}
         options={{
           background: {
-            color: { value: "#f7f9fc" }, // 밝은 배경 색상
+            color: { value: "#FFF7E0" }, // 밝은 배경 색상
           },
           fpsLimit: 60,
           interactivity: {
             events: {
               onClick: { enable: true, mode: "bubble" },
-              onHover: { enable: true, mode: "grab" },
+              onHover: { enable: false},
             },
             modes: {
               bubble: { distance: 250, duration: 2, size: 10, opacity: 0.8 },
@@ -201,11 +202,11 @@ const App = () => {
           particles: {
             color: { value: ["#ff9f43", "#2ecc71", "#3498db", "#9b59b6", "#e74c3c"] }, // 다채로운 색상
             links: {
-              color: "#cccccc",
-              distance: 120,
+              color: "#1F2328",
+              distance: 100,
               enable: true,
               opacity: 0.5,
-              width: 1,
+              width: 3,
             },
             move: {
               direction: "none",
@@ -213,9 +214,9 @@ const App = () => {
               outModes: { default: "bounce" }, // 부드러운 움직임
               speed: 3,
             },
-            number: { density: { enable: true }, value: 100 }, // 입자 수 조정
+            number: { density: { enable: true }, value: 60 }, // 입자 수 조정
             opacity: { value: { min: 0.3, max: 0.8 } }, // 투명도 다양화
-            shape: { type: ["circle", "star"] }, // 별 모양 추가
+            shape: { type: [],}, // 별 모양 추가
             size: { value: { min: 3, max: 7 } }, // 입자 크기 다양화
           },
           detectRetina: true,

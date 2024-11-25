@@ -85,7 +85,7 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
             flexDir="column"
             alignItems="center"
         >
-            <Box textAlign="center" bg="#f9fafb" p={10}>
+            <Box textAlign="center" p={10}>
       {/* 제목 */}
       <Text fontSize="36px" fontWeight="bold" mb={8}>
         Getting Started

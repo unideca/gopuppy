@@ -7,19 +7,21 @@ interface StyledButtonProps extends ButtonProps {
   setButtonText : React.Dispatch<React.SetStateAction<string>>;
   scrollHandler : () => void;
   v : string;
+  isScrolled : boolean;
 }
 
 const StyledButton: FC<StyledButtonProps> = ({ 
   children,
   buttonText,
   setButtonText,
-  v
+  v,
+  isScrolled
 }) => {
   return (
     <Button
         fontSize={["13px", "13px", "13px", "14px", "15px", "15px", "15px"]}
         variant="unstyled"
-        color="#333333" // 기본 텍스트 색상
+        color={isScrolled ? "white" : "#333333"} // 기본 텍스트 색상
         position="relative"
         onClick={() => {
           setButtonText(v);

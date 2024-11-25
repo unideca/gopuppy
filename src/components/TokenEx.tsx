@@ -32,7 +32,7 @@ const TokenEx : FC<TokenExProps> = () => {
                             }}
                         />
                         <Text w={["320px","400px","400px","400px","400px","400px","400px"]} fontSize={["32px","32px","32px","32px","32px","40px","40px"]} fontWeight="bold" color="#333333">
-                            Go Puppy is a new paradigm in meme coin trading
+                            GoPuppy brings a new wave of meme coin trading with the charm of an adorable puppy.
                         </Text>
                         {/* <Text w="400px" fontSize={["16px","16px","16px","16px","16px","24px","24px"]} color="#333333" mt={4} mb={4}>
                             Token Presale is 
