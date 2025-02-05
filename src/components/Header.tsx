@@ -1,4 +1,4 @@
-import { Button, Flex, Img, Menu, MenuButton, MenuList, MenuItem, IconButton, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Img, Menu, MenuButton, MenuList, MenuItem, IconButton, Text } from "@chakra-ui/react";
 import { FC, useEffect, useState } from "react";
 import StyledButton from "./StyledButton";
 
@@ -29,17 +29,17 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
     }
 
     const scrollHandler = () => {
-        if (buttonText === "HOME") {
+        if (["HOME", "홈"].includes(buttonText)) {
             scrollToComponent(tokenHomeRef);
-        } else if (buttonText === "SERVICES") {
+        } else if (["SERVICES", "서비스"].includes(buttonText)) {
             scrollToComponent(tokenServiceRef);
-        } else if (buttonText === "ABOUT") {
+        } else if (["ABOUT", "정보"].includes(buttonText)) {
             scrollToComponent(tokenAboutRef);
-        } else if (buttonText === "ROADMAP") {
+        } else if (["ROADMAP", "로드맵"].includes(buttonText)) {
             scrollToComponent(tokenRoadmapRef);
-        } else if (buttonText === "TOKEN") {
+        } else if (["TOKEN", "토큰"].includes(buttonText)) {
             scrollToComponent(tokenRef);
-        } else if (buttonText === "CONTACT") {
+        } else if (["CONTACT", "문의"].includes(buttonText)) {
             scrollToComponent(contactRef);
         }
     }
@@ -61,6 +61,10 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
             }
         }
         window.addEventListener('scroll', setScroll);
+
+        return ()=>{
+            window.removeEventListener('scroll', setScroll);
+        }
     },[])
 
     useEffect(() => {
@@ -93,12 +97,12 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
                 <Flex gap={["16px","16px","16px","16px","16px","20px","20px"]}>
                 {HeaderMenu.map((v,i) => (
                     <StyledButton
-                    key={i} 
-                    buttonText={buttonText}
-                    setButtonText={setButtonText}
-                    scrollHandler={scrollHandler}
-                    isScrolled={isScrolled}
-                    v={v}
+                        key={i} 
+                        buttonText={buttonText}
+                        setButtonText={setButtonText}
+                        scrollHandler={scrollHandler}
+                        isScrolled={isScrolled}
+                        v={v}
                     >
                         {v}
                     </StyledButton>
@@ -160,7 +164,7 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
                         transition : "transform 0.5s ease",
                         transform : "translateX(0%)",
                     }}
-                    >WHITE PAPER</Button>
+                    >{t(`header.whitepaper`)}</Button>
             </Flex>
             
         </Flex>
@@ -179,32 +183,35 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
             position="relative">
             
             <Img w="80px" src="images/gopuppylogo.png" zIndex={4}/>
-            <Menu>
-                <MenuButton
-                    as={IconButton}
-                    aria-label='Options'
-                    icon={<HamburgerIcon />}
-                    variant='outline'
-                    color="#333333"
-            />
-            <MenuList bgColor="#F7F9FC">
-                <MenuItem onClick={() => {setButtonText("SERVICES")}} bgColor="#F7F9FC" color="black">
-                    {t(`header.home`)}
-                </MenuItem>
-                <MenuItem onClick={() => {setButtonText("ABOUT")}} bgColor="#F7F9FC" color="black">
-                    {t(`header.about`)}
-                </MenuItem>
-                <MenuItem onClick={() => {setButtonText("TOKEN")}} bgColor="#F7F9FC" color="black">
-                    {t(`header.token`)}
-                </MenuItem>
-                <MenuItem onClick={() => {setButtonText("ROADMAP")}} bgColor="#F7F9FC" color="black">
-                    {t(`header.roadmap`)}
-                </MenuItem>
-                <MenuItem onClick={() => {setButtonText("CONTACT")}} bgColor="#F7F9FC" color="black">
-                    {t(`header.contact`)}
-                </MenuItem>
-            </MenuList>
-        </Menu>
+            <Box>
+                <Button onClick={()=> {changeLanguage(i18n.language)}}>{t(`language`)}</Button>
+                <Menu>
+                    <MenuButton
+                        as={IconButton}
+                        aria-label='Options'
+                        icon={<HamburgerIcon />}
+                        variant='outline'
+                        color="#333333"
+                    />
+                    <MenuList bgColor="#F7F9FC">
+                        <MenuItem onClick={(e) => {setButtonText(e.currentTarget.innerText)}} bgColor="#F7F9FC" color="black">
+                            {t(`header.home`)}
+                        </MenuItem>
+                        <MenuItem onClick={(e) => {setButtonText(e.currentTarget.innerText)}} bgColor="#F7F9FC" color="black">
+                            {t(`header.about`)}
+                        </MenuItem>
+                        <MenuItem onClick={(e) => {setButtonText(e.currentTarget.innerText)}} bgColor="#F7F9FC" color="black">
+                            {t(`header.token`)}
+                        </MenuItem>
+                        <MenuItem onClick={(e) => {setButtonText(e.currentTarget.innerText)}} bgColor="#F7F9FC" color="black">
+                            {t(`header.roadmap`)}
+                        </MenuItem>
+                        <MenuItem onClick={(e) => {setButtonText(e.currentTarget.innerText)}} bgColor="#F7F9FC" color="black">
+                            {t(`header.contact`)}
+                        </MenuItem>
+                    </MenuList>
+                </Menu>
+            </Box>
         </Flex>
         </> 
     )
