@@ -3,6 +3,7 @@ import { FC, useEffect } from "react";
 import serviceTopKR from "../data/servicesTopKR.json"
 import serviceBottomKR from "../data/servicesBottomKR.json"
 import { motion, useAnimation, Variants } from "framer-motion"; 
+import { useTranslation } from "react-i18next";
 
 interface ServicesProps {
     setIsRender : React.Dispatch<React.SetStateAction<boolean>>;
@@ -22,6 +23,7 @@ const epepeImg = [
 ]
 
 const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants, language}) => {
+    const { t } = useTranslation();
     const serviceTopAnimation = useAnimation();
     const serviceBottomAnimation = useAnimation();
     
@@ -88,7 +90,7 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
             <Box textAlign="center" p={10}>
       {/* 제목 */}
       <Text fontSize="36px" fontWeight="bold" mb={8}>
-        Getting Started
+        {t(`service.title`)}
       </Text>
       
       {/* 3단계 카드 */}
@@ -114,10 +116,10 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
             01
           </Text>
           <Text fontSize="20px" fontWeight="bold" mb={2}>
-            Choose your wallet
+            {t(`service.step1.title`)}
           </Text>
           <Text color="#333333" mb={4} h="72px">
-            A wallet is necessary for people wanting to use, trade, or hold GoPuppy. You can pick a wallet.
+            {t(`service.step1.content`)}
           </Text>
         </GridItem>
         <GridItem textAlign="center" bg="#FFF7E0" p={8} borderRadius="md">
@@ -135,17 +137,17 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
             02
           </Text>
           <Text fontSize="20px" fontWeight="bold" mb={2}>
-            Configure your wallet
+            {t(`service.step2.title`)}
           </Text>
           <Text color="#333333" mb={4} h="72px">
-            After downloading, you can configure your wallet according to our guide.
+          {t(`service.step2.content`)}
           </Text>
           <Button 
           bg="#FFD700"
           as="a" //down
           href="/documents/guide.pdf" //down
           download="guide.pdf" // 다운로드 속성 추가
-          >Guide</Button>
+          >{t(`service.guide`)}</Button>
         </GridItem>
         <GridItem textAlign="center" bg="#FFF7E0" p={8} borderRadius="md">
           <Text
@@ -162,10 +164,10 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
             03
           </Text>
           <Text fontSize="20px" fontWeight="bold" mb={2}>
-            Get some GOP
+            {t(`service.step3.title`)}
           </Text>
           <Text color="#333333" mb={4} h="72px">
-            There’s lots of ways to get your hands on some GOP
+            {t(`service.step3.content`)}
           </Text>
         </GridItem>
       </Grid>
@@ -188,7 +190,6 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
                 ))}
             </Flex>
         </motion.div>
-        
       </Flex>
     </Box>
         </Flex> 

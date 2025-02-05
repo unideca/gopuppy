@@ -1,6 +1,7 @@
 import { Button, Flex, Img, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import {motion} from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 interface TokenExProps {
     language : string;
@@ -9,6 +10,7 @@ interface TokenExProps {
 const MotionImg = motion(Img);
 
 const TokenEx : FC<TokenExProps> = () => {
+    const { t } = useTranslation();
   
     return (
         <>
@@ -32,7 +34,7 @@ const TokenEx : FC<TokenExProps> = () => {
                             }}
                         />
                         <Text w={["320px","400px","400px","400px","400px","400px","400px"]} fontSize={["32px","32px","32px","32px","32px","40px","40px"]} fontWeight="bold" color="#333333">
-                            GoPuppy brings a new wave of meme coin trading with the charm of an adorable puppy.
+                            {t(`hero.content`)}
                         </Text>
                         {/* <Text w="400px" fontSize={["16px","16px","16px","16px","16px","24px","24px"]} color="#333333" mt={4} mb={4}>
                             Token Presale is 
@@ -51,7 +53,6 @@ const TokenEx : FC<TokenExProps> = () => {
                         <Flex py={5} gap={4} w={["340px","400px","400px","400px","400px","400px","400px"]}>
                             <Img src="images/t_logo.png" w={["100px","120px","120px","120px","120px","120px","120px"]}/>
                             <Img src="images/x_logo.png"w={["100px","120px","120px","120px","120px","120px","120px"]}/>
-                            <Img src="images/medium_logo.png" w={["100px","120px","120px","120px","120px","120px","120px"]}/>
                         </Flex>
                         <Flex gap={3} py={5} w={["340px","400px","400px","400px","400px","400px","400px"]} justifyContent="center">
                         <Button
@@ -83,7 +84,7 @@ const TokenEx : FC<TokenExProps> = () => {
                             transform: "translateX(0%)", // 효과가 어디서 부터 시작할건지
                             }}
                             >
-                            WHITEPAPER →
+                            {t(`hero.whitepaper`)} →
                         </Button>
                         
                         {/* <Button

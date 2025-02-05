@@ -1,6 +1,7 @@
 import { Flex, Grid, Img, Text } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import { motion, useAnimation, Variants } from "framer-motion"; 
+import { useTranslation } from "react-i18next";
 
 interface AboutProps {
     isRender : boolean;
@@ -9,7 +10,7 @@ interface AboutProps {
 }
 
 const About : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
-
+    const { t } = useTranslation();
     const aboutMidAnimation = useAnimation();
 
     useEffect(() => {
@@ -45,7 +46,7 @@ const About : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
             alignItems="center"
         >
             <Text fontSize="26px" mb={24}>
-                About GOP
+                {t(`about.title`)}
             </Text>
             <motion.div
             initial="hidden"
@@ -57,7 +58,8 @@ const About : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
                         <Img w="300px" src="images/gopuppyabout.png"/>
                     </Flex>
                     <Flex flexDir="column" justifyContent="center" alignItems="center">
-                        <Text fontSize="18px">The GoPuppy project is a revolutionary blockchain initiative inspired by the charm and playful nature of puppies. It envisions creating a community-driven Meme Economy where puppies take the lead in the meme coin ecosystem. By leveraging the engaging appeal of meme culture, GoPuppy aims to redefine meme coin management and trading. While cryptocurrency and meme-powered blockchain technology have seen remarkable advancements, challenges such as scalability, high transaction fees, slow processing speeds, security risks, and complex user experiences persist.
+                        <Text fontSize="18px">
+                            {t(`about.content`)}
                         </Text>
                         {/* <Button
                             w={["140px","140px","140px","140px","140px","220px","220px"]}

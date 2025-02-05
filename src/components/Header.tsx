@@ -3,7 +3,8 @@ import { FC, useEffect, useState } from "react";
 import StyledButton from "./StyledButton";
 
 import { HamburgerIcon } from '@chakra-ui/icons';
-
+import { useTranslation } from "react-i18next";
+import i18n from "../locales/i18n";
 
 interface HeaderProps {
     tokenHomeRef : React.RefObject<HTMLDivElement>;
@@ -16,12 +17,9 @@ interface HeaderProps {
     setLanguage : React.Dispatch<React.SetStateAction<string>>;
 }
 
-const HeaderMenu = ["HOME", "SERVICES", "ABOUT", "TOKEN", "ROADMAP", "CONTACT"];
-
-
-
 const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef, tokenRef, tokenRoadmapRef, contactRef }) => {
-    
+    const { t } = useTranslation();
+    const HeaderMenu = [t(`header.home`), t(`header.services`), t(`header.about`), t(`header.token`), t(`header.roadmap`), t(`header.contact`)];
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [buttonText, setButtonText] = useState<string>("");
     
@@ -43,6 +41,14 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
             scrollToComponent(tokenRef);
         } else if (buttonText === "CONTACT") {
             scrollToComponent(contactRef);
+        }
+    }
+
+    const changeLanguage = (lang: string) => {
+        if (lang === 'en') {
+            i18n.changeLanguage('ko');
+        } else {
+            i18n.changeLanguage('en');
         }
     }
 
@@ -100,6 +106,32 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
                 </Flex>
             </Flex>
             <Flex gap={4} alignItems="center">
+            <Button
+                fontSize={["13px", "13px", "13px", "14px", "15px", "15px", "15px"]}
+                variant="unstyled"
+                color={isScrolled ? "white" : "#333333"} // 기본 텍스트 색상
+                position="relative"
+                onClick={() => {
+                    changeLanguage(i18n.language);
+                }}
+                h="auto"
+                _hover={{
+                "color" : "#A3468C",
+                }}
+                transition="color 0.2s ease"
+                _after={{
+                content : "''",
+                position : "absolute",
+                bottom : -2,
+                left : 0,
+                width : "100%",
+                height : "2px",
+                backgroundColor : "#A3468C",
+                transition : "width 0.5s ease"
+                }}
+            >
+                {i18n.language}
+            </Button>
                 <Button
                     w={["90px","90px","90px","90px","90px","120px","120px"]}
                     h={["30px","30px","30px","30px","30px","36px","36px"]}
@@ -157,19 +189,19 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
             />
             <MenuList bgColor="#F7F9FC">
                 <MenuItem onClick={() => {setButtonText("SERVICES")}} bgColor="#F7F9FC" color="black">
-                    SERVICES
+                    {t(`header.home`)}
                 </MenuItem>
                 <MenuItem onClick={() => {setButtonText("ABOUT")}} bgColor="#F7F9FC" color="black">
-                    ABOUT
+                    {t(`header.about`)}
                 </MenuItem>
                 <MenuItem onClick={() => {setButtonText("TOKEN")}} bgColor="#F7F9FC" color="black">
-                    TOKEN
+                    {t(`header.token`)}
                 </MenuItem>
                 <MenuItem onClick={() => {setButtonText("ROADMAP")}} bgColor="#F7F9FC" color="black">
-                    ROADMAP
+                    {t(`header.roadmap`)}
                 </MenuItem>
                 <MenuItem onClick={() => {setButtonText("CONTACT")}} bgColor="#F7F9FC" color="black">
-                    CONTACT
+                    {t(`header.contact`)}
                 </MenuItem>
             </MenuList>
         </Menu>

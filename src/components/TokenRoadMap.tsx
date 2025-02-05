@@ -2,6 +2,7 @@ import { Box, Flex, Text, IconButton, useMediaQuery } from "@chakra-ui/react";
 import { FC, useEffect, useState } from "react";
 import { motion, useAnimation, Variants } from "framer-motion";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+import { useTranslation } from "react-i18next";
 
 interface AboutProps {
     isRender: boolean;
@@ -10,6 +11,7 @@ interface AboutProps {
 }
 
 const TokenRoadMap: FC<AboutProps> = ({ isRender, tokenExInVariants }) => {
+    const { t } = useTranslation();
     const aboutMidAnimation = useAnimation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTabletOrSmaller] = useMediaQuery("(max-width: 768px)");
@@ -36,11 +38,11 @@ const TokenRoadMap: FC<AboutProps> = ({ isRender, tokenExInVariants }) => {
     }, [isRender]);
 
     const roadmapItems = [
-        { quarter: "Q1, Q2 2025", details: ["Project design and team formation", "Blockchain platform design and development", "Building a community and user base", "Securing investors and partners"], bg: "#F1C40F"},
-        { quarter: "Q3, Q4 2025", details: ["Prototype launch and testing", "Deployment of the initial version of the platform", "Strengthening regulatory and legal compliance", "Optimization of smart contracts and transactions using GPT technology"]},
-        { quarter: "2026", details: ["Technical and functional improvements", "Enhancing platform stability and security", "Advancing and expanding the automation capabilities of smart contracts", "Adding multilingual support and various currency functions"] },
-        { quarter: "2027", details: ["Reforming the governance system to enhance community decision-making participation", "Optimization through the integration of AI and blockchain technology and introduction of new service models", "Implementation of fully automated transaction systems through smart contracts", "Global marketing and user expansion"] },
-        { quarter: "2028 ~", details: ["Policy adjustments and feedback collection in line with global market changes", "Provision of market forecasts and automated investment strategies using AI technology", "Appropriate response to regulatory changes in various countries", "Investor protection and provision of sustainable financial services"] },
+        { quarter: "Q1, Q2 2025", details: [t(`roadmap.list1.item1`),t(`roadmap.list1.item2`), t(`roadmap.list1.item3`), t(`roadmap.list1.item4`)], bg: "#F1C40F"},
+        { quarter: "Q3, Q4 2025", details: [t(`roadmap.list2.item1`),t(`roadmap.list2.item2`), t(`roadmap.list2.item3`), t(`roadmap.list2.item3`)]},
+        { quarter: "2026", details: [t(`roadmap.list3.item1`), t(`roadmap.list3.item2`), t(`roadmap.list3.item3`), t(`roadmap.list3.item4`)] },
+        { quarter: "2027", details: [t(`roadmap.list4.item1`), t(`roadmap.list4.item2`), t(`roadmap.list4.item3`), t(`roadmap.list4.item4`)] },
+        { quarter: "2028 ~", details: [t(`roadmap.list5.item1`), t(`roadmap.list5.item2`), t(`roadmap.list5.item3`), t(`roadmap.list5.item4`)] },
     ];
     
    

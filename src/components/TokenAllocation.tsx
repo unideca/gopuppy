@@ -1,6 +1,7 @@
 import { Box, Flex, Img, Text } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import { motion, useAnimation, Variants } from "framer-motion"; 
+import { useTranslation } from "react-i18next";
 
 interface AboutProps {
     isRender : boolean;
@@ -9,7 +10,7 @@ interface AboutProps {
 }
 
 const TokenAllocation : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
-
+    const { t } = useTranslation();
     const tokenMidAnimation = useAnimation();
 
     useEffect(() => {
@@ -47,7 +48,7 @@ const TokenAllocation : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
             alignItems="center"
         >
             <Text fontSize="26px" mb={20} textAlign="center">
-                TOKEN DISTRIBUTION PROCEEDS
+                {t(`distribution.title`)}
             </Text>
             <motion.div
             initial="hidden"
@@ -60,37 +61,37 @@ const TokenAllocation : FC<AboutProps> = ({isRender, tokenExInVariants}) => {
                         <Flex flexDir="column" fontSize={["12px","12px","16px","16px","16px","16px","16px"]}>
                             <Flex as="li" align="center">
                                 <Box boxSize={3} bg="red.400" borderRadius="sm" mr={2}></Box>
-                                <Text>Project Development & Research</Text>
+                                <Text>{t(`distribution.list.item1`)}</Text>
                             </Flex>
                             <Flex as="li" align="center">
                                 <Box boxSize={3} bg="blue.400" borderRadius="sm" mr={2}></Box>
-                                <Text>Community Contributions</Text>
+                                <Text>{t(`distribution.list.item2`)}</Text>
                             </Flex>
                             <Flex as="li" align="center">
                                 <Box boxSize={3} bg="green.400" borderRadius="sm" mr={2}></Box>
-                                <Text>Early Investors & Partners</Text>
+                                <Text>{t(`distribution.list.item3`)}</Text>
                             </Flex>
                             <Flex as="li" align="center">
                                 <Box boxSize={3} bg="orange.300" borderRadius="sm" mr={2}></Box>
-                                <Text>Team & Founders</Text>
+                                <Text>{t(`distribution.list.item4`)}</Text>
                             </Flex>
                         </Flex>
                         <Flex flexDir="column" fontSize={["12px","12px","16px","16px","16px","16px","16px"]}>
                             <Flex as="li" align="center">
                                 <Box boxSize={3} bg="purple.300" borderRadius="sm" mr={2}></Box>
-                                <Text>Marketing & Operations</Text>
+                                <Text>{t(`distribution.list.item5`)}</Text>
                             </Flex>
                             <Flex as="li" align="center">
                                 <Box boxSize={3} bg="pink.300" borderRadius="sm" mr={2}></Box>
-                                <Text>DAO & Governance</Text>
+                                <Text>{t(`distribution.list.item6`)}</Text>
                             </Flex>
                             <Flex as="li" align="center">
                                 <Box boxSize={3} bg="yellow.400" borderRadius="sm" mr={2}></Box>
-                                <Text>Reserve & Emergency Fund</Text>
+                                <Text>{t(`distribution.list.item7`)}</Text>
                             </Flex>
                             <Flex as="li" align="center">
                                 <Box boxSize={3} bg="gray.500" borderRadius="sm" mr={2}></Box>
-                                <Text>Legal Compliance & Security</Text>
+                                <Text>{t(`distribution.list.item8`)}</Text>
                             </Flex>
                         </Flex>
                     </Flex>
