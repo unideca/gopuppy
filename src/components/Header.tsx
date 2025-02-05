@@ -19,7 +19,7 @@ interface HeaderProps {
 
 const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef, tokenRef, tokenRoadmapRef, contactRef }) => {
     const { t } = useTranslation();
-    const HeaderMenu = [t(`header.home`), t(`header.services`), t(`header.about`), t(`header.token`), t(`header.roadmap`), t(`header.contact`)];
+    const HeaderMenu = [t(`header.home`), t(`header.services`), t(`header.about`), t(`header.token`), t(`header.roadmap`)];
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [buttonText, setButtonText] = useState<string>("");
     
@@ -134,7 +134,7 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
                 transition : "width 0.5s ease"
                 }}
             >
-                {i18n.language}
+                {t(`language`)}
             </Button>
                 <Button
                     w={["90px","90px","90px","90px","90px","120px","120px"]}
@@ -206,9 +206,9 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
                         <MenuItem onClick={(e) => {setButtonText(e.currentTarget.innerText)}} bgColor="#F7F9FC" color="black">
                             {t(`header.roadmap`)}
                         </MenuItem>
-                        <MenuItem onClick={(e) => {setButtonText(e.currentTarget.innerText)}} bgColor="#F7F9FC" color="black">
+                        {/* <MenuItem onClick={(e) => {setButtonText(e.currentTarget.innerText)}} bgColor="#F7F9FC" color="black">
                             {t(`header.contact`)}
-                        </MenuItem>
+                        </MenuItem> */}
                     </MenuList>
                 </Menu>
             </Box>
