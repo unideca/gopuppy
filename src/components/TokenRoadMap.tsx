@@ -67,7 +67,7 @@ const TokenRoadMap: FC<AboutProps> = ({ isRender, tokenExInVariants }) => {
             alignItems="center"
         >
             <Text fontSize="26px" mb={20}>
-                Roadmap
+                {t(`roadmap.title`)}
             </Text>
             <motion.div
                 initial="hidden"
