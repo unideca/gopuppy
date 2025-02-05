@@ -5,9 +5,9 @@ const Contact: FC = () => {
     return (
         <Flex
             w="100%"
-            minH="60vh"
+            minH="30vh"
             color="#333333"
-            pt={72}
+            pt={16}
             zIndex={2}
             flexDir="column"
             alignItems="center"

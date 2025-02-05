@@ -50,7 +50,7 @@ const TokenEx : FC<TokenExProps> = () => {
                                 Live
                             </mark>
                         </Text> */}
-                        <Flex py={5} gap={4} w={["340px","400px","400px","400px","400px","400px","400px"]}>
+                        <Flex justifyContent="center" py={5} gap={4} w={["340px","400px","400px","400px","400px","400px","400px"]}>
                             <Img src="images/t_logo.png" w={["100px","120px","120px","120px","120px","120px","120px"]}/>
                             <Img src="images/x_logo.png"w={["100px","120px","120px","120px","120px","120px","120px"]}/>
                         </Flex>
