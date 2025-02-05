@@ -19,7 +19,13 @@ interface HeaderProps {
 
 const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef, tokenRef, tokenRoadmapRef, contactRef }) => {
     const { t } = useTranslation();
-    const HeaderMenu = [t(`header.home`), t(`header.services`), t(`header.about`), t(`header.token`), t(`header.roadmap`)];
+    const HeaderMenu = [
+        t(`header.home`),
+        t(`header.services`),
+        t(`header.about`),
+        t(`header.token`),
+        t(`header.roadmap`),
+    ];
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [buttonText, setButtonText] = useState<string>("");
     
@@ -166,7 +172,6 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
                     }}
                     >{t(`header.whitepaper`)}</Button>
             </Flex>
-            
         </Flex>
                 
         {/*모바일*/ }
