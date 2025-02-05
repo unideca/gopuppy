@@ -1,0 +1,82 @@
+{
+    "language": "English",
+    "header" : {
+        "home": "HOME",
+        "services": "SERVICES",
+        "about": "ABOUT",
+        "token": "TOKEN",
+        "roadmap": "ROADMAP",
+        "contact": "CONTACT",
+        "whitepaper": "WHITE PAPER"
+    },
+    "hero" : {
+        "content": "GoPuppy brings a new wave of meme coin trading with the charm of an adorable puppy.",
+        "whitepaper": "WHITEPAPER"
+    },
+    "service" : {
+        "title": "Getting Started",
+        "step1": {
+            "title": "Choose your wallet",
+            "content": "A wallet is necessary for people wanting to use, trade, or hold GoPuppy. You can pick a wallet."
+        },
+        "step2": {
+            "title": "Configure your wallet",
+            "content": "After downloading, you can configure your wallet according to our guide."
+        },
+        "step3": {
+            "title": "Get some GOP",
+            "content": "There’s lots of ways to get your hands on some GOP"
+        },
+        "guide": "Guide"
+    },
+    "about" : {
+        "title": "About GOP",
+        "content": "The GoPuppy project is a revolutionary blockchain initiative inspired by the charm and playful nature of puppies. It envisions creating a community-driven Meme Economy where puppies take the lead in the meme coin ecosystem. By leveraging the engaging appeal of meme culture, GoPuppy aims to redefine meme coin management and trading. While cryptocurrency and meme-powered blockchain technology have seen remarkable advancements, challenges such as scalability, high transaction fees, slow processing speeds, security risks, and complex user experiences persist."
+    },
+    "distribution": {
+        "title": "TOKEN DISTRIBUTION PROCEEDS",
+        "list": {
+            "item1": "Project Development & Research",
+            "item2": "Community Contributions",
+            "item3": "Early Investors & Partners",
+            "item4": "Team & Founders",
+            "item5": "Marketing & Operations",
+            "item6": "DAO & Governance",
+            "item7": "Reserve & Emergency Fund",
+            "item8": "Legal Compliance & Security"
+        }
+    },
+    "roadmap": {
+        "title": "Roadmap",
+        "list1": {
+            "item1": "Project design and team formation",
+            "item2": "Blockchain platform design and development",
+            "item3": "Building a community and user base",
+            "item4": "Securing investors and partners"
+        },
+        "list2": {
+            "item1": "Prototype launch and testing",
+            "item2": "Deployment of the initial version of the platform",
+            "item3": "Strengthening regulatory and legal compliance",
+            "item4": "Optimization of smart contracts and transactions using GPT technology"
+        },
+        "list3": {
+            "item1": "Technical and functional improvements",
+            "item2": "Enhancing platform stability and security",
+            "item3": "Advancing and expanding the automation capabilities of smart contracts",
+            "item4": "Adding multilingual support and various currency functions"
+        },
+        "list4": {
+            "item1": "Reforming the governance system to enhance community decision-making participation",
+            "item2": "Optimization through the integration of AI and blockchain technology and introduction of new service models",
+            "item3": "Implementation of fully automated transaction systems through smart contracts",
+            "item4": "Global marketing and user expansion"
+        },
+        "list5": {
+            "item1": "Policy adjustments and feedback collection in line with global market changes",
+            "item2": "Provision of market forecasts and automated investment strategies using AI technology",
+            "item3": "Appropriate response to regulatory changes in various countries",
+            "item4": "Investor protection and provision of sustainable financial services"
+        }
+    }
+}

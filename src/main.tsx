@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import "./index.css";
+import "./locales/i18n.ts";
 
 const theme = extendTheme({
   fonts: {
