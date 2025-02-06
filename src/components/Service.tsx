@@ -185,7 +185,7 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
                     <Image
                     src={v.image}
                     alt="DOGE"
-                    width={["55px","80px","140px","190px","200px","200px","200px"]}
+                    width={["110px","160px","280px","380px","400px","400px","400px"]}
                     zIndex={2}
                     id="serviceTop"
                     />
