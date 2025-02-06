@@ -27,7 +27,11 @@
             "title": "GOP를 받으세요",
             "content": "GOP를 받는 방법이 제시되어 있습니다."
         },
-        "guide": "가이드"
+        "guide": "가이드 설치하기",
+        "contract": {
+            "label": "컨트랙트 주소",
+            "copy": "복사하기"
+        }
     },
     "about" : {
         "title": "GOP 란",

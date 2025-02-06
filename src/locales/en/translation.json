@@ -27,7 +27,11 @@
             "title": "Get some GOP",
             "content": "There’s lots of ways to get your hands on some GOP"
         },
-        "guide": "Guide"
+        "guide": "Guide Install",
+        "contract": {
+            "label": "Contract Address",
+            "copy": "Copy"
+        }
     },
     "about" : {
         "title": "About GOP",

@@ -1,10 +1,11 @@
-import { Box, Button, Flex, Grid, GridItem, Image, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, FormLabel, Grid, GridItem, Image, Img, Input, Text } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import serviceTopKR from "../data/servicesTopKR.json"
 import serviceBottomKR from "../data/servicesBottomKR.json"
 import { motion, useAnimation, Variants } from "framer-motion"; 
 import { useTranslation } from "react-i18next";
 import i18n from "../locales/i18n";
+import {CopyToClipboard} from "react-copy-to-clipboard";
 
 interface ServicesProps {
     setIsRender : React.Dispatch<React.SetStateAction<boolean>>;
@@ -144,12 +145,6 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
           <Text color="#333333" mb={4} h="72px">
           {t(`service.step2.content`)}
           </Text>
-          <Button 
-            bg="#FFD700"
-            as="a" //down
-            href={`/documents/${filename}`} //down
-            download={filename} // 다운로드 속성 추가
-          >{t(`service.guide`)}</Button>
         </GridItem>
         <GridItem textAlign="center" bg="#FFF7E0" p={8} borderRadius="md">
           <Text
@@ -173,7 +168,31 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
           </Text>
         </GridItem>
       </Grid>
-
+      <Flex 
+        bg="#FFFFFF"
+        borderRadius={10}
+        height={100} 
+        justifyContent={"space-evenly"} 
+        alignItems={"center"}
+      >
+        <Flex>
+          <Button
+                bg="#FFD700"
+                as="a" //down
+                href={`/documents/${filename}`} //down
+                download={filename} // 다운로드 속성 추가
+          >{t(`service.guide`)}</Button>
+        </Flex>
+        <Flex alignItems={"center"}>
+          <label style={{width: 200}}>
+            {t(`service.contract.label`)}
+          </label>
+          <Input disabled value={"0x06D995BCA328758a668255fe8B8F7e893D58037c"}/>
+          <CopyToClipboard text={"0x06D995BCA328758a668255fe8B8F7e893D58037c"}>
+            <Button bg="#FFD700">{t(`service.contract.copy`)}</Button>
+          </CopyToClipboard>
+        </Flex>
+      </Flex>
       <Flex justifyContent="center">
         <motion.div
             initial="hidden"
