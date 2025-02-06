@@ -17,15 +17,15 @@ const TokenEx : FC<TokenExProps> = () => {
         <Flex w="full" minH="70vh" alignItems="center"> 
             <Flex mx="auto" mt={56}>
                 <Flex pl="40px" alignItems="center">                  
-                    <Flex w="full" justifyContent="center">
-                        <Flex flexDir="column" justifyContent="center" alignItems="center">
+                    <Flex w="full" justifyContent="center" alignItems="center">
+                        <Flex flexDir="column" justifyContent="center">
                         <MotionImg
                             h={["400px","400px","400px","0px","0px","0px","0px","0px"]}
                             src="images/gopuppy.png"
                             zIndex={2}
                             position="relative"
-                            initial={{ opacity: 1, y: -20 }}
-                            animate={{ y: [0, -20, 0] }}
+                            initial={{ opacity: 1, y: -40 }}
+                            animate={{ y: [0, -40, 0] }}
                             transition={{
                                 duration: 2,
                                 ease: "easeOut",
@@ -50,10 +50,10 @@ const TokenEx : FC<TokenExProps> = () => {
                                 Live
                             </mark>
                         </Text> */}
-                        <Flex justifyContent="center" py={5} gap={4} w={["340px","400px","400px","400px","400px","400px","400px"]}>
+                        {/* <Flex justifyContent="center" py={5} gap={4} w={["340px","400px","400px","400px","400px","400px","400px"]}>
                             <Img src="images/t_logo.png" w={["100px","120px","120px","120px","120px","120px","120px"]}/>
                             <Img src="images/x_logo.png"w={["100px","120px","120px","120px","120px","120px","120px"]}/>
-                        </Flex>
+                        </Flex> */}
                         <Flex gap={3} py={5} w={["340px","400px","400px","400px","400px","400px","400px"]} justifyContent="center">
                         <Button
                             h={["40px","40px","40px","40px","40px","52px","52px"]}
