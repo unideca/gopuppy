@@ -12,7 +12,7 @@ const MotionImg = motion(Img);
 
 const TokenEx : FC<TokenExProps> = () => {
     const { t } = useTranslation();
-    const filename = `GoPuppy_whitepaper_${i18n.language}.pdf`;
+    const filename = `GoPuppy_whitepaper_ver_1.0_${i18n.language}.pdf`;
   
     return (
         <>

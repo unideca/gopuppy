@@ -19,7 +19,7 @@ interface HeaderProps {
 
 const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef, tokenRef, tokenRoadmapRef, contactRef }) => {
     const { t } = useTranslation();
-    const filename = `GoPuppy_whitepaper_${i18n.language}.pdf`
+    const filename = `GoPuppy_whitepaper_ver_1.0_${i18n.language}.pdf`
     const HeaderMenu = [
         t(`header.home`),
         t(`header.services`),
