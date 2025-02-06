@@ -19,6 +19,7 @@ interface HeaderProps {
 
 const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef, tokenRef, tokenRoadmapRef, contactRef }) => {
     const { t } = useTranslation();
+    const filename = `GoPuppy_whitepaper_${i18n.language}.pdf`
     const HeaderMenu = [
         t(`header.home`),
         t(`header.services`),
@@ -151,8 +152,8 @@ const Header : FC<HeaderProps> = ({tokenHomeRef, tokenServiceRef, tokenAboutRef,
                     borderRadius="24px"
                     overflow="hidden"
                     as="a" //down
-                    href="/documents/GoPuppy_whitepaper_eng.pdf" //down
-                    download="GoPuppy_whitepaper_eng.pdf" // 다운로드 속성 추가
+                    href={`/documents/${filename}`} //down
+                    download={filename} // 다운로드 속성 추가
                     _hover= {{
                         backgroundColor : "#0C0E27",
                         _before : {

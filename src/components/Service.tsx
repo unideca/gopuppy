@@ -4,6 +4,7 @@ import serviceTopKR from "../data/servicesTopKR.json"
 import serviceBottomKR from "../data/servicesBottomKR.json"
 import { motion, useAnimation, Variants } from "framer-motion"; 
 import { useTranslation } from "react-i18next";
+import i18n from "../locales/i18n";
 
 interface ServicesProps {
     setIsRender : React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,6 +25,7 @@ const epepeImg = [
 
 const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants, language}) => {
     const { t } = useTranslation();
+    const filename = `guide_${i18n.language}.pdf`;
     const serviceTopAnimation = useAnimation();
     const serviceBottomAnimation = useAnimation();
     
@@ -143,10 +145,10 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
           {t(`service.step2.content`)}
           </Text>
           <Button 
-          bg="#FFD700"
-          as="a" //down
-          href="/documents/guide.pdf" //down
-          download="guide.pdf" // 다운로드 속성 추가
+            bg="#FFD700"
+            as="a" //down
+            href={`/documents/${filename}`} //down
+            download={filename} // 다운로드 속성 추가
           >{t(`service.guide`)}</Button>
         </GridItem>
         <GridItem textAlign="center" bg="#FFF7E0" p={8} borderRadius="md">

@@ -2,6 +2,7 @@ import { Button, Flex, Img, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import {motion} from "framer-motion";
 import { useTranslation } from "react-i18next";
+import i18n from "../locales/i18n";
 
 interface TokenExProps {
     language : string;
@@ -11,6 +12,7 @@ const MotionImg = motion(Img);
 
 const TokenEx : FC<TokenExProps> = () => {
     const { t } = useTranslation();
+    const filename = `GoPuppy_whitepaper_${i18n.language}.pdf`;
   
     return (
         <>
@@ -63,8 +65,8 @@ const TokenEx : FC<TokenExProps> = () => {
                             padding="12px 24px"
                             fontWeight="bold"
                             as="a" //down
-                            href="/documents/GoPuppy_whitepaper_eng.pdf" //down
-                            download="GoPuppy_whitepaper_eng.pdf" // 다운로드 속성 추가
+                            href={`/documents/${filename}`} //down
+                            download={filename} // 다운로드 속성 추가
                             overflow="hidden" //overflow가 들어가면 버튼 이외의 영역을 잘라줘서 무빙 그라데이션 효과
                             _hover={{
                                 backgroundColor : "#0C0E27",
