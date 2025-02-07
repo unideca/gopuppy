@@ -1,4 +1,4 @@
-import { Box, Button, Flex, FormLabel, Grid, GridItem, Image, Img, Input, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Image, Img, Input, Text } from "@chakra-ui/react";
 import { FC, useEffect } from "react";
 import serviceTopKR from "../data/servicesTopKR.json"
 import serviceBottomKR from "../data/servicesBottomKR.json"
