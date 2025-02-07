@@ -19,7 +19,13 @@ const Contact: FC = () => {
                 <Text>Email: official@gopuppy.com</Text>
             </Flex> */}
             <Text fontSize="12px" mt={28}>
-                Copyright © XZ Corporation 2024 All Rights Reserved.
+                Faunus Global Inc. 2098133
+            </Text>
+            <Text fontSize="12px">
+                Address : Charles Court, 1st Floor 189 Main Street PO Box 4406 Tortola VG1110 British Virgin Islands
+            </Text>
+            <Text fontSize="12px">
+                Copyright © Faunus Global Inc. 2098133 2024 All Rights Reserved.
             </Text>
         </Flex>
     );
