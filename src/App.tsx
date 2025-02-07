@@ -1,9 +1,9 @@
 
 import { useEffect, useRef, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import {
-  type Container,
-} from "@tsparticles/engine";
+import { initParticlesEngine } from "@tsparticles/react";
+// import {
+//   type Container,
+// } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim"; 
 import { BeatLoader } from "react-spinners";
 import { motion, useAnimation } from "framer-motion"; 
@@ -82,9 +82,9 @@ const App = () => {
     });
   }, [showSpinner]);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
-  };
+  // const particlesLoaded = async (container?: Container): Promise<void> => {
+  //   console.log(container);
+  // };
 
   // Intersection Observer로 컴포넌트의 가시성 확인
   useEffect(() => {
@@ -180,8 +180,8 @@ const App = () => {
   if (!showSpinner && init) {
     return (
       <>
-      <div>
-      <Particles
+      <div style={{backgroundColor: "#FFF7E0"}}>
+      {/* <Particles
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={{
@@ -221,7 +221,7 @@ const App = () => {
           },
           detectRetina: true,
         }}
-      />
+      /> */}
       <>
       <motion.div
         initial="hidden"
