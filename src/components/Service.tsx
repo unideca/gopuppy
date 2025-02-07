@@ -188,7 +188,10 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
             {t(`service.contract.label`)}
           </label>
           <Input disabled value={"0x06D995BCA328758a668255fe8B8F7e893D58037c"}/>
-          <CopyToClipboard text={"0x06D995BCA328758a668255fe8B8F7e893D58037c"}>
+          <CopyToClipboard 
+            text={"0x06D995BCA328758a668255fe8B8F7e893D58037c"}
+            onCopy={()=>{alert(t(`service.contract.alert`))}}
+          >
             <Button bg="#FFD700">{t(`service.contract.copy`)}</Button>
           </CopyToClipboard>
         </Flex>

@@ -30,7 +30,8 @@
         "guide": "Guide Install",
         "contract": {
             "label": "Contract Address",
-            "copy": "Copy"
+            "copy": "Copy",
+            "alert": "Copy Completed"
         }
     },
     "about" : {
