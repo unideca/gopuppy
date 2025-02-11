@@ -16,8 +16,12 @@ const TokenEx : FC<TokenExProps> = () => {
   
     return (
         <>
-        <Flex w="full" minH="70vh" alignItems="center"> 
-            <Flex mx="auto" mt={56} overflowX={"hidden"} minHeight={550}>
+        <Flex w="full" alignItems="center"> 
+            <Flex 
+                mx="auto" mt={["4rem", "4rem", "4rem", "16rem", "16rem", "16rem", "16rem", "16rem"]} 
+                overflowX={"hidden"} 
+                minHeight={550}
+            >
                 <Flex alignItems="center">                  
                     <Flex w="full" justifyContent="center" alignItems="center">
                         <Flex w="full" flexDir="column" justifyContent="center" >
