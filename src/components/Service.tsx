@@ -90,7 +90,7 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
             flexDir="column"
             alignItems="center"
         >
-            <Box textAlign="center" p={10}>
+            <Box textAlign="center">
       {/* 제목 */}
       <Text fontSize="36px" fontWeight="bold" mb={8}>
         {t(`service.title`)}
@@ -99,7 +99,7 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
       {/* 3단계 카드 */}
       <Grid
         templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)", "repeat(3, 1fr)"]}
-        gap={8}
+        justifyContent={"center"}
         mb={12}
         maxW="1200px"
         mx="auto"
@@ -126,25 +126,32 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
           </Text>
         </GridItem>
         <GridItem textAlign="center" bg="#FFF7E0" p={8} borderRadius="md">
-          <Text
-            bg="#FFD700"
-            color="black"
-            fontSize="18px"
-            fontWeight="bold"
-            borderRadius="full"
-            display="inline-block"
-            px={4}
-            py={2}
-            mb={4}
+          <Flex 
+            flexDirection={"column"} 
+            alignItems={"center"} 
+            justifyContent={"center"}
+            width={"100%"}
           >
-            02
-          </Text>
-          <Text fontSize="20px" fontWeight="bold" mb={2}>
-            {t(`service.step2.title`)}
-          </Text>
-          <Text color="#333333" mb={4} h="72px">
-          {t(`service.step2.content`)}
-          </Text>
+            <Text
+              bg="#FFD700"
+              color="black"
+              fontSize="18px"
+              fontWeight="bold"
+              borderRadius="full"
+              display="inline-block"
+              px={4}
+              py={2}
+              mb={4}
+            >
+              02
+            </Text>
+            <Text fontSize="20px" fontWeight="bold" mb={2}>
+              {t(`service.step2.title`)}
+            </Text>
+            <Text color="#333333" mb={4} h="72px">
+            {t(`service.step2.content`)}
+            </Text>
+          </Flex>
         </GridItem>
         <GridItem textAlign="center" bg="#FFF7E0" p={8} borderRadius="md">
           <Text
@@ -168,33 +175,35 @@ const Services : FC<ServicesProps> = ({isRender, setIsRender, tokenExInVariants,
           </Text>
         </GridItem>
       </Grid>
-      <Flex 
+      <Flex
         bg="#FFFFFF"
+        flexWrap={"wrap"}
         borderRadius={10}
-        height={100} 
+        gap={"1rem"}
+        height={150} 
         justifyContent={"space-evenly"} 
         alignItems={"center"}
       >
-        <Flex>
+        <Box>
           <Button
                 bg="#FFD700"
                 as="a" //down
                 href={`/documents/${filename}`} //down
                 download={filename} // 다운로드 속성 추가
           >{t(`service.guide`)}</Button>
-        </Flex>
-        <Flex alignItems={"center"}>
-          <label style={{width: 200}}>
+        </Box>
+        <Box>
+          <label style={{}}>
             {t(`service.contract.label`)}
           </label>
-          <Input disabled value={"0x06D995BCA328758a668255fe8B8F7e893D58037c"}/>
+          <Input mx={"1rem"} width="150px" readOnly value={"0x06D995BCA328758a668255fe8B8F7e893D58037c"}/>
           <CopyToClipboard 
             text={"0x06D995BCA328758a668255fe8B8F7e893D58037c"}
             onCopy={()=>{alert(t(`service.contract.alert`))}}
           >
             <Button bg="#FFD700">{t(`service.contract.copy`)}</Button>
           </CopyToClipboard>
-        </Flex>
+        </Box>
       </Flex>
       <Flex justifyContent="center">
         <motion.div

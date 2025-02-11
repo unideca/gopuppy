@@ -8,6 +8,7 @@ const Contact: FC = () => {
             minH="30vh"
             color="#333333"
             pt={16}
+            px={4}
             zIndex={2}
             flexDir="column"
             alignItems="center"

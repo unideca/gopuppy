@@ -180,7 +180,7 @@ const App = () => {
   if (!showSpinner && init) {
     return (
       <>
-      <div style={{backgroundColor: "#FFF7E0"}}>
+      <div style={{backgroundColor: "#FFF7E0", width: "100"}}>
       {/* <Particles
         id="tsparticles"
         particlesLoaded={particlesLoaded}
